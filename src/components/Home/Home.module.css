@@ -71,17 +71,35 @@
     @keyframes ring {
         0% {
             transform: translate(-50%, -50%) scale(0); /* Ring at original size */
-            opacity: 1; 
+            opacity: 1;
         }
         50% {
-            transform: translate(-50%, -50%) scale(1.5); /* Make the ring grow */
-            opacity: 0; 
+            transform: translate(-50%, -50%) scale(1.1); /* Default scale for small screens */
+            opacity: 0;
         }
         100% {
             transform: translate(-50%, -50%) scale(0); /* Shrink the ring back */
-            opacity: 0; 
+            opacity: 0;
         }
     }
+    
+    @media (min-width: 768px) {
+        @keyframes ring {
+            0% {
+                transform: translate(-50%, -50%) scale(0); /* Ring at original size */
+                opacity: 1;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.5); /* Scale to 1.5 on large screens */
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0); /* Shrink the ring back */
+                opacity: 0;
+            }
+        }
+    }
+    
 
     .btn:hover {
         /* box-shadow to create a glowing effect */

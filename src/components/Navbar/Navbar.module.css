@@ -13,3 +13,16 @@
     color: white !important;
 }
 
+
+.logo {
+    width: 25%; 
+  }
+  
+  
+  @media (max-width: 768px) {
+    .logo {
+      width: 50%; 
+    }
+  }
+  
+
