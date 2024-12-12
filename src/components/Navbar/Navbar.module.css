@@ -1,0 +1,15 @@
+.RegisterBtn {
+    background-color: #08659f !important;
+    border-color: #08659f !important;
+}
+
+.LoginBtn {
+    color: #08659f !important;
+    border: #08659f solid 1px !important; 
+}
+
+.LoginBtn:hover {
+    background-color: #08659f !important;
+    color: white !important;
+}
+

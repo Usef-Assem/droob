@@ -1,0 +1,11 @@
+.About {
+    background-color: #21c1d7;
+}
+
+.AboutContent h1 {
+    font-family: "Marhey", sans-serif;
+}
+.AboutContent p {
+    font-family: "Marhey", sans-serif;
+    font-size: 20px;
+}

@@ -1,0 +1,165 @@
+    .landing {
+        background: -webkit-gradient(linear, left top, left bottom, from(#21c1d7), to(white));
+    }
+
+    .title {
+        color: #E74C3C;
+        font-size: 60px;
+        font-family: "Marhey", sans-serif;
+        font-weight: 500;
+    }
+
+
+    .roundedImage {
+        border-radius: 50%;
+        position: relative;
+        z-index: 3;
+    }
+    
+    .imgContent {
+        position: relative;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        z-index: 3;
+    }
+
+.textContent p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 85%;
+}
+    
+    
+    .circle {
+        width: 50%;
+        height: 50%;
+        background-color: #EE486F;
+        position: absolute; 
+        bottom: 9%;
+        left: 67%;
+        transform: translateX(-50%);
+        border-radius: 50%; 
+        z-index: 2; 
+    }
+    
+    
+
+    .btn {
+        background-color: rgb(230, 175, 1);
+        border: none;
+        font-size: 22px;
+        font-weight: 700;
+        font-family: sans-serif;
+        transition: all 0.3s;
+        position: relative; /* Ensure the button is positioned for the ::after pseudo-element */
+    }
+
+    .btn::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 170px;
+        height: 170px;
+        border-radius: 100%; /* Circular ring */
+        border: 6px solid #ffd500; /* Ring color */
+        transform: translate(-50%, -50%); /* Center the ring */
+        animation: ring 2s infinite; /* Apply the animation */
+    }
+
+    /* Keyframes for the ring animation */
+    @keyframes ring {
+        0% {
+            transform: translate(-50%, -50%) scale(0); /* Ring at original size */
+            opacity: 1; 
+        }
+        50% {
+            transform: translate(-50%, -50%) scale(1.5); /* Make the ring grow */
+            opacity: 0; 
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(0); /* Shrink the ring back */
+            opacity: 0; 
+        }
+    }
+
+    .btn:hover {
+        /* box-shadow to create a glowing effect */
+        -webkit-box-shadow: 0px 0px 38px 3px rgba(230, 177, 1, 0.70);
+        -moz-box-shadow: 0px 0px 38px 3px rgba(230, 177, 1, 0.70);
+        box-shadow: 0px 0px 38px 3px rgba(230, 177, 1, 0.70);
+        outline: solid 8px #FFB600;
+        /* You can also adjust the hover effect here if needed */
+    }
+
+    .halfCircle {
+        width: 20%;
+        height: 80% ;
+        background-color: #FFB600;
+        border-top-right-radius: 100%; 
+        border-bottom-right-radius: 100%;
+        position: absolute;
+        left: -13%;
+    }
+
+    /* Home.module.css */
+
+    /* Animation for small balls */
+    @keyframes moveBall {
+        0% {
+            top: -50px; /* Start from the top */
+            opacity: 0.6;
+        }
+        50% {
+            top: -50px; 
+            opacity: 1;
+        }
+        100% {
+            top: 100vh; /* Move to the bottom */
+            opacity: 0.2;
+        }
+    }
+    
+    /* Style for the small balls */
+    .star {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background-color: #3498db; /* Blue color for the star */
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Star shape */
+        animation: moveBall 3s ease-in infinite; /* Apply animation */
+    }
+    
+    /* For multiple balls, you can adjust the timing and delay */
+    .star:nth-child(1) {
+        left: 10%;
+        animation-delay: 0s;
+    }
+    
+    .star:nth-child(2) {
+        left: 25%;
+        animation-delay: 1s;
+    }
+    
+    .star:nth-child(3) {
+        left: 40%;
+        animation-delay: 2s;
+    }
+    
+    .star:nth-child(4) {
+        left: 55%;
+        animation-delay: 2.5s;
+    }
+    
+    .star:nth-child(5) {
+        left: 70%;
+        animation-delay: 3s;
+    }
+    
+    .star:nth-child(6) {
+        left: 85%;
+        animation-delay: 2.5s;
+    }
+
+
+
