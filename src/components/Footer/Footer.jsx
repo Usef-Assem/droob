@@ -8,7 +8,7 @@ function Footer() {
     <>
       <footer className={`${style.footer} py-5`}>
         <div className={`${style.content} p-5 d-flex align-items-center flex-column`}>
-          <h1 className='text-white'>Droob</h1>
+          <h1 className='text-white'>Doroob</h1>
           <div className="socialMedia d-flex py-4">
           <i className="fa-brands fa-facebook fa-2xl" style={{ color: "#ffffff" }}></i>
           <i className="fa-brands fa-linkedin fa-2xl ms-5" style={{ color: "#ffffff" }}></i>
