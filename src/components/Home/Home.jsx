@@ -33,10 +33,10 @@ function Home() {
           <div className={`${style.textContent} ms-lg-5 col-md-5 col-12 d-flex flex-column align-items-end`} data-aos="fade-down">
             <h1 dir="rtl" className={`${style.title} me-md-2 me-2`}>منصة دروب</h1>
             <p dir="rtl" className='fs-4 me-2 me-md-2 '>
-              دروب مساعدك الشخصي كمُعلّم في تشخيص المتعلمين من ذوي صعوبات التعلم واكتشاف الدروب المناسبة وتقديم الدعم والتوجيه التعليمي المناسب لهم.
+              دروب مساعدك الشخصي الذكي " يعمل بالذكاء الاصطناعي " كمُعلّم في تشخيص المتعلمين من ذوي صعوبات التعلم واكتشاف الدروب المناسبة وتقديم الدعم والتوجيه التعليمي المناسب لهم.
             </p>
             <button className={`py-md-3 px-md-5 py-2 px-2 rounded-5 me-4 mt-4 text-white ${style.btn}`}>
-              اكتشف تلميذك الان
+              اكتشف تلميذك الآن 
             </button>
           </div>
         </div>
