@@ -65,7 +65,7 @@ const MainExam = () => {
     }
 
     setSubmissionError("");
-    setSubmissionLoading(true); // Show loading during submission
+    setSubmissionLoading(true);
 
     try {
       console.log("Answers:", answers);
@@ -77,6 +77,7 @@ const MainExam = () => {
       console.log("Response:", response.data);
       console.log("Response:", response.data.data);
       localStorage.setItem('subject', response.data.data)
+      alert("تم إرسال الإجابات بنجاح برجاء اعطاء الجهاز للطالب");
       navigate("/IQExam");
     } catch (error) {
       console.error("Submission error:", error);
@@ -97,7 +98,7 @@ const MainExam = () => {
       <title>الامتحان الاساسي</title>
     </Helmet>
     <div className="min-vh-100 bg-light py-3">
-      <h1 className="text-center">الاختبار الاساسي</h1>
+      <h1 className="text-center">بطاقة الملاحظة للمعلم</h1>
       <div className="p-4" dir="rtl">
         {data.map((section) => (
           <div key={section.id} className="mb-5">
