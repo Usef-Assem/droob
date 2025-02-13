@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
-
 function MathExam() {
   const [secondExamData, setSecondExamData] = useState(null); // Initialize as null
   const [loading, setLoading] = useState(true);
@@ -12,7 +11,6 @@ function MathExam() {
   const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
   const [examSubject, setExamSubject] = useState(null);
   const navigate = useNavigate();
-
   useEffect(() => {
     // Check if success is true in localStorage
     const isSuccess = localStorage.getItem("success") === "true";
@@ -21,20 +19,16 @@ function MathExam() {
       setLoading(false);
       return;
     }
-
     const userId = localStorage.getItem("userId");
-
     if (userId) {
       const fetchSecondExamData = async () => {
         try {
           const response = await axios.get(
             `https://doroob.info/public/api/${userId}/Math-exam`
           );
-          console.log(response.data.data);
-          console.log(secondExamData);
-           // Log the full response
-          setExamSubject(response.data.data[0].subject.name);
-          setSecondExamData(response?.data.data[0]); 
+          console.log(response.data); // Log the full response
+          setExamSubject(response.data.data.subject.name);
+          setSecondExamData(response.data.data); // Set the exam data
         } catch (err) {
           console.log(err);
           setError("فشل في جلب بيانات الامتحان الثاني. حاول مرة أخرى لاحقًا.");
@@ -48,7 +42,6 @@ function MathExam() {
       setLoading(false);
     }
   }, []);
-
   useEffect(() => {
     if (secondExamData && secondExamData.questions) {
       const initialAnswers = {};
@@ -62,7 +55,6 @@ function MathExam() {
       setSelectedAnswers(prev => ({ ...prev, ...initialAnswers }));
     }
   }, [secondExamData]);
-
   useEffect(() => {
     if (secondExamData && secondExamData.questions) {
       const allAnswered = secondExamData.questions
@@ -77,14 +69,12 @@ function MathExam() {
       setAllQuestionsAnswered(allAnswered);
     }
   }, [selectedAnswers, secondExamData]);
-
   const handleAnswerSelect = (questionId, answerId) => {
     setSelectedAnswers(prev => ({
       ...prev,
       [questionId]: answerId
     }));
   };
-
   const moveAnswer = (questionId, currentIndex, direction) => {
     setSelectedAnswers(prev => {
       const newOrder = [...prev[questionId]];
@@ -93,7 +83,6 @@ function MathExam() {
       return { ...prev, [questionId]: newOrder };
     });
   };
-
   const handleSubmit = async () => {
     if (!allQuestionsAnswered) {
       Swal.fire({
@@ -102,10 +91,8 @@ function MathExam() {
       });
       return;
     }
-
     const userId = localStorage.getItem("userId");
     const examId = secondExamData ? secondExamData.id : null;
-
     if (!examId || !userId) {
       Swal.fire({
         icon: "error",
@@ -113,7 +100,6 @@ function MathExam() {
       });
       return;
     }
-
     const submissions = {
       exam_id: examId,
       answers: secondExamData.questions.reduce((acc, question) => {
@@ -123,7 +109,6 @@ function MathExam() {
         return acc;
       }, {})
     };
-
     try {
       console.log(submissions);
       const response = await axios.post(
@@ -131,8 +116,6 @@ function MathExam() {
         submissions
       );
       console.log(response.data);
-
-
       localStorage.setItem('Math_Level' , response.data['Math_Level '])
       localStorage.setItem('Math_grade' , response.data.Math_grade)
       
@@ -158,7 +141,6 @@ function MathExam() {
       });
     }
   };
-
   if (loading) return (
     <div className="d-flex justify-content-center align-items-center vh-100" dir="rtl">
       <div className="spinner-border text-primary" role="status">
@@ -166,15 +148,12 @@ function MathExam() {
       </div>
     </div>
   );
-
   if (error) return (
     <div className="alert alert-danger text-center m-5" dir="rtl">
       {error}
     </div>
   );
-
   if (!secondExamData) return null; // Return null if exam data is not yet available
-
   return (
     <>
       <Helmet>
@@ -187,7 +166,6 @@ function MathExam() {
             <div className="card-header bg-primary text-white text-end">
               <h3 className="card-title mb-0">{secondExamData.name}</h3>
             </div>
-
             <div className="card-body">
               {secondExamData.questions
                 .filter(question => question.type === 'mcq' || question.type === 'ordering')
@@ -197,7 +175,6 @@ function MathExam() {
                       <span className="badge bg-secondary fs-6 ms-3">{index + 1}</span>
                       <h5 className="fw-bold mb-0 text-dark">{question.text}</h5>
                     </div>
-
                     {question.image && (
                       <div className="text-center mb-4">
                         <img
@@ -208,7 +185,6 @@ function MathExam() {
                         />
                       </div>
                     )}
-
                     {question.type === 'ordering' ? (
                       <div className="col-12">
                         {selectedAnswers[question.id]?.map((answerId, index) => {
@@ -271,7 +247,6 @@ function MathExam() {
                 ))}
             </div>
           </div>
-
           <div className="text-center mt-5">
             <button 
               onClick={handleSubmit}
@@ -286,5 +261,4 @@ function MathExam() {
     </>
   );
 }
-
 export default MathExam;
