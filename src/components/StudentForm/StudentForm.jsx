@@ -69,9 +69,12 @@ function StudentForm() {
                 <label htmlFor="level" className="mt-3">الفصل :</label>
                 <Field as="select" id="level" name="level" className="form-control mt-2">
                   <option value="" disabled>اختر الفصل</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
+                  <option value="4">الصف الرابع الابتدائي</option>
+                  <option value="5">الخامس</option>
+                  <option value="6">السادس</option>
+                  <option value="1">الصف الاول الاعدادي</option>
+                  <option value="2">الثاني</option>
+                  <option value="3">الثالث</option>
                 </Field>
                 {errors.level && touched.level && (
                   <div className="text-danger mt-1">{errors.level}</div>
