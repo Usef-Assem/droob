@@ -95,7 +95,7 @@ const MainExam = () => {
   return <>
         <Helmet>
       <meta charSet="utf-8" />
-      <title>الامتحان الاساسي</title>
+      <title>بطاقة ملاحظة المعلم</title>
     </Helmet>
     <div className="min-vh-100 bg-light py-3">
       <h1 className="text-center">بطاقة الملاحظة للمعلم</h1>
