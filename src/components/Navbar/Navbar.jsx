@@ -14,7 +14,7 @@ function Navbar() {
   const handleLogout = async () => {
     setisLoading(true);
     try {
-      const response = await axios.post(`http://doroob.info/logout`, {}, {
+      const response = await axios.post(`https://doroob.info/public/api/logout`, {}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
