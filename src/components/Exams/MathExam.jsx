@@ -30,9 +30,11 @@ function MathExam() {
           const response = await axios.get(
             `https://doroob.info/public/api/${userId}/Math-exam`
           );
-          console.log(response.data); // Log the full response
-          setExamSubject(response.data.data.subject.name);
-          setSecondExamData(response.data.data); // Set the exam data
+          console.log(response.data.data);
+          console.log(secondExamData);
+           // Log the full response
+          setExamSubject(response.data.data[0].subject.name);
+          setSecondExamData(response?.data.data[0]); 
         } catch (err) {
           console.log(err);
           setError("فشل في جلب بيانات الامتحان الثاني. حاول مرة أخرى لاحقًا.");
@@ -129,6 +131,7 @@ function MathExam() {
         submissions
       );
       console.log(response.data);
+
 
       localStorage.setItem('Math_Level' , response.data['Math_Level '])
       localStorage.setItem('Math_grade' , response.data.Math_grade)
