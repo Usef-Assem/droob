@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+// Utility function to make text between quotes bold
+const formatTextWithBoldQuotes = (text) => {
+  return text.replace(/"(.*?)"/g, '<strong>$1</strong>');
+};
+
 function ReadingExam() {
   const [exams, setExams] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -163,7 +168,12 @@ function ReadingExam() {
                 <div key={question.id} className="mb-5">
                   <div className="d-flex align-items-center mb-3 text-end">
                     <span className="badge bg-secondary fs-6 ms-3">{index + 1}</span>
-                    <h5 className="fw-bold mb-0 text-dark">{question.text}</h5>
+                    <p
+                      className="mb-0 text-dark fs-5"
+                      dangerouslySetInnerHTML={{
+                        __html: formatTextWithBoldQuotes(question.text),
+                      }}
+                    />
                   </div>
 
                   {question.image && (
