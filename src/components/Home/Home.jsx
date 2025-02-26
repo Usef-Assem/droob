@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import style from './Home.module.css'; // Make sure the CSS is imported
 import cloud from '../../Assets/cloud.png';
-import girl from '../../Assets/girl.jpg';
+import girl from '../../Assets/girl.jpeg';
 import { Helmet } from "react-helmet";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles

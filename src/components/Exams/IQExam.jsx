@@ -19,6 +19,7 @@ function IQExam() {
       try {
         const response = await axios.get(`https://doroob.info/public/api/${userId}/exam`);
         setExamData(response.data.data);
+        console.log(response.data.data);
       } catch (err) {
         console.log(err);
         setError("خطأ في تحميل البيانات. يرجى الانتهاء من الامتحان الاساسي اولا.");

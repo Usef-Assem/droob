@@ -8,7 +8,6 @@ import toast from 'react-hot-toast';
 function Navbar() {
   const [isLoading, setisLoading] = useState(false);
   const navigate = useNavigate();
-  const API_URL = process.env.REACT_APP_API_URL;
   const token = localStorage.getItem('Token');
 
   const handleLogout = async () => {

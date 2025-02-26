@@ -13,7 +13,6 @@ function ReadingExam() {
   const [error, setError] = useState(null);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const navigate = useNavigate();
-  // Check localStorage for success flag
   const isSuccess = localStorage.getItem("success") === "true";
 
   // Fetch data from the API

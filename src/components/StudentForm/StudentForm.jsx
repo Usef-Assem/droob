@@ -29,10 +29,10 @@ function StudentForm() {
     <>
           <Helmet>
       <meta charSet="utf-8" />
-      <title>بطاقة الطالب</title>
+      <title>بطاقة التلميذ</title>
     </Helmet>
       <div className={`${style.Student} p-3`}>
-        <h1 className="text-center py-3">بطاقة الطالب</h1>
+        <h1 className="text-center py-3">بطاقة التلميذ</h1>
         <div className="d-flex flex-column align-items-end">
           <Formik
             initialValues={{
@@ -69,9 +69,9 @@ function StudentForm() {
                 <label htmlFor="level" className="mt-3">الفصل :</label>
                 <Field as="select" id="level" name="level" className="form-control mt-2">
                   <option value="" disabled>اختر الفصل</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
+                  <option value="4">الصف الرابع الابتدائي</option>
+                  <option value="5">الصف الخامس الابتدائي</option>
+                  <option value="6">الصف السادس الابتدائي </option>
                 </Field>
                 {errors.level && touched.level && (
                   <div className="text-danger mt-1">{errors.level}</div>
