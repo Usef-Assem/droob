@@ -48,7 +48,7 @@ const UnidiedGuides = () => {
                         style={{ width: '80px', height: 'auto' }}
                     />
                     <h1 className="text-primary mb-3">التوجيه التعليمي لذوي صعوبات التعلم</h1>
-                    <h3 className="text-secondary">(خاص بصعوبات تعلم القراءة والحساب)</h3>
+                    <h3 className="text-secondary">(صعوبات تعلم القراءة والحساب)</h3>
                     <p className="mt-3">إعداد: ياسمين خالد عبدالمنعم</p>
                 </header>
 
@@ -68,13 +68,13 @@ const UnidiedGuides = () => {
                 {/* Instructions Section */}
                 <section className="card mb-4 shadow">
                     <div className="card-body">
-                        <h2 className="card-title text-primary mb-4">تعليمات</h2>
+                        <h2 className="card-title text-primary mb-4">ملاحظات هامة</h2>
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">
-                                عزيزي المُعلّم مرفق إليك مجموعة من التوجيهات التعليمية التي تساعدك في التعامل مع تلميذك من ذوي صعوبات تعلم القراءة والحساب.
+                                عزيزي المُعلّم إليك مجموعة من التوجيهات التعليمية التي تساعدك في التعامل مع تلميذك من ذوي صعوبات تعلم القراءة والحساب.
                             </li>
                             <li className="list-group-item">
-                                المطلوب من سيادتكم الاستعانة بها في تقديم التوجيه التعليمي المناسب.
+                                المطلوب من سيادتكم الاستعانة بها في تقديم التوجيه التعليمي المناسب لهم.
                             </li>
                         </ul>
                     </div>
@@ -83,9 +83,9 @@ const UnidiedGuides = () => {
                 {/* Important Notes Section */}
                 <section className="card mb-4 shadow">
                     <div className="card-body">
-                        <h2 className="card-title text-primary mb-4">ملاحظات هامة</h2>
+                        {/* <h2 className="card-title text-primary mb-4">ملاحظات هامة</h2> */}
                         <div className="alert alert-warning">
-                            <strong>واعلم أنك</strong> أهم دور في العملية التعليمية، مراعاة الفروق الفردية وإدراك نقاط القوة والضعف لدى تلميذك.
+                            <strong>عزيزي المعلم</strong> يجب عليك مراعاة الفروق الفردية وإدراك نقاط القوة والضعف لدى تلميذك.
                         </div>
                         <ul className="list-group list-group-flush">
                             {['التدرج', 'التكرار', 'التنوع', 'التشجيع الإيجابي'].map((item, index) => (
@@ -128,7 +128,7 @@ const UnidiedGuides = () => {
                 {/* Specific Guidelines Section */}
                 <section className="card mb-4 shadow">
                     <div className="card-body">
-                        <h2 className="card-title text-primary mb-4">التوجيهات التعليمية الخاصة</h2>
+                        <h2 className="card-title text-primary mb-4">التوجيهات التعليمية المرتبطة بصعوبات تعلم القراءة و الحساب</h2>
 
                         {/* Reading Specific Guidelines */}
                         <div className="mb-4">

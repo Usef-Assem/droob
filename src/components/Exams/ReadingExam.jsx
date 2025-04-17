@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 // Utility function to make text between quotes bold
 const formatTextWithBoldQuotes = (text) => {
@@ -154,7 +155,11 @@ function ReadingExam() {
     );
   }
 
-  return (
+  return <>
+    <Helmet>
+    <meta charSet="utf-8" />
+    <title>امتحان القراءة</title>
+  </Helmet>
     <div className="bg-light min-vh-100 py-5" dir="rtl">
       <div className="container">
         {exams.map((exam) => (
@@ -291,7 +296,8 @@ function ReadingExam() {
         </div>
       </div>
     </div>
-  );
+  ;
+</>
 }
 
 export default ReadingExam;

@@ -102,6 +102,8 @@ function IQExam() {
 
         else if(localStorage.getItem('subject') === "math"){
           navigate("/MathExam");}
+        
+          else {navigate("/")}
       
     } catch (error) {
       console.log(error);
